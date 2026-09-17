@@ -7,7 +7,7 @@ prints the decoded content to the terminal.
 **No webcam or live camera is used anywhere in this project.** You provide
 one image (a file path), and the program returns the decoded text.
 
-This project deliberately avoids `pyzbar`. Detection and decoding are done
+Detection and decoding are done
 with:
 - `cv2.QRCodeDetector` — OpenCV's native multi-QR detector/decoder.
 - `cv2.barcode.BarcodeDetector` — OpenCV's native 1D barcode detector/decoder
@@ -38,12 +38,6 @@ qr-barcode-scanner/
 
 ### Step 2.1 — Prerequisites
 - Python **3.9 or newer** installed on your system.
-- `pip` available on your PATH.
-- Verify with:
-  ```bash
-  python3 --version
-  pip3 --version
-  ```
 
 ### Step 2.2 — Clone the repository
 ```bash
@@ -52,12 +46,6 @@ cd <your-repo>
 ```
 
 ### Step 2.3 — Create and activate a virtual environment (recommended)
-
-**macOS / Linux:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
 
 **Windows (PowerShell):**
 ```powershell
@@ -107,12 +95,12 @@ python3 scanner.py --image /full/path/to/your_own_photo.jpg
 python3 scanner.py
 ```
 ```
-Enter path to the QR/Barcode image: sample_images/sample_qr.png
+Enter path to the QR/Barcode image: sample_images/qr_image.png
 ```
 
 ### Optional flag
 ```bash
-python3 scanner.py --image sample_images/sample_qr.png --output-dir my_results
+python3 scanner.py --image sample_images/qr_image.png --output-dir my_results
 ```
 `-o / --output-dir` controls where the annotated result image is saved
 (defaults to `outputs/`).
@@ -147,13 +135,12 @@ results:
 - Avoid extreme blur or very low resolution.
 - A small amount of quiet/white space around the code helps decoding.
 
-The sample files in `sample_images/` (`sample_qr.png`, `sample_ean13.png`,
-`link.jpg`) are provided as ready-to-use test fixtures — no extra setup or
+The sample files in `sample_images/` (`yt.jpg`, `ean13.png`,) are provided                                           as ready-to-use test fixtures — no extra setup or
 generation step is needed to use them.
 
 ---
 
-## 5. How It Works (Summary)
+## 5. How It Works:
 
 1. **Load** the image from disk with OpenCV (`cv2.imread`).
 2. **QR branch:** `cv2.QRCodeDetector().detectAndDecodeMulti()` finds and
@@ -174,9 +161,6 @@ generation step is needed to use them.
 4. **Annotate** every detected symbol with its bounding polygon and decoded
    text, and save the result image.
 5. **Report** all decoded values to the terminal.
-
-See `project_report.pdf` (submitted alongside the repository link) for the
-full technical write-up, design rationale, and test results.
 
 ---
 

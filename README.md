@@ -41,8 +41,8 @@ qr-barcode-scanner/
 
 ### Step 2.2 — Clone the repository
 ```bash
-git clone https://github.com/<Aa-Par>/<QR-Code-Barcode-Scanner>.git
-cd <QR-Code-Barcode-Scanner>
+git clone https://github.com/Aa-Par/QR-Code-Barcode-Scanner.git
+cd QR-Code-Barcode-Scanner
 ```
 
 ### Step 2.3 — Create and activate a virtual environment (recommended)

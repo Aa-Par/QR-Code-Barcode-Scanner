@@ -23,12 +23,12 @@ with:
 
 ```
 qr-barcode-scanner/
-├── scanner.py                 # Main CLI entry point (run this)
-├── requirements.txt           # Python dependencies
-├── sample_images/             # Ready-to-use test images (QR + barcode)
+├── scanner.py                 
+├── requirements.txt          
+├── sample_images/             
 │   ├── sample_qr.png
 │   └── sample_ean13.png
-├── outputs/                   # Annotated result images are saved here
+├── outputs/                   
 └── README.md
 ```
 
@@ -41,8 +41,8 @@ qr-barcode-scanner/
 
 ### Step 2.2 — Clone the repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/<Aa-Par>/<QR-Code-Barcode-Scanner>.git
+cd <QR-Code-Barcode-Scanner>
 ```
 
 ### Step 2.3 — Create and activate a virtual environment (recommended)
@@ -85,9 +85,8 @@ The script accepts an image in two ways:
 
 ### Option A — Pass the image path as a command-line argument
 ```bash
-python3 scanner.py --image sample_images/sample_qr.png
-python3 scanner.py --image sample_images/sample_ean13.png
-python3 scanner.py --image /full/path/to/your_own_photo.jpg
+python3 scanner.py --image sample_images/yt.jpg
+python3 scanner.py --image sample_images/ean13.png
 ```
 
 ### Option B — Run without arguments and be prompted interactively
@@ -95,31 +94,31 @@ python3 scanner.py --image /full/path/to/your_own_photo.jpg
 python3 scanner.py
 ```
 ```
-Enter path to the QR/Barcode image: sample_images/qr_image.png
+Enter path to the QR/Barcode image: sample_images/yt.jpg
 ```
 
 ### Optional flag
 ```bash
-python3 scanner.py --image sample_images/qr_image.png --output-dir my_results
+python3 scanner.py --image sample_images/yt.jpg --output-dir my_results
 ```
 `-o / --output-dir` controls where the annotated result image is saved
 (defaults to `outputs/`).
 
 ### Expected terminal output
 ```
-[INFO] Loaded image: sample_images/sample_ean13.png  (shape: 460x290)
+[INFO] Loaded image: D:\#VIT B\Projects\qr-barcode-scanner\sample_images\yt.jpg  (shape: 474x474)
 [INFO] Running classical gradient-based barcode localization ...
-[INFO]   -> 1 candidate region(s) found.
+[INFO]   -> 16 candidate region(s) found.
 [INFO] Running QR code detection & decoding ...
 [INFO] Running barcode detection & decoding ...
 
 ============================================================
 SCAN RESULTS
 ============================================================
-[Barcode #1]  Type: EAN_13  |  Data: 5901234123457
+[QR #1]  Type: QRCODE  |  Data: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ============================================================
 
-[INFO] Annotated result image saved to: outputs/sample_ean13_annotated_20260101_101500.png
+[INFO] Annotated result image saved to: d:\qr-barcode-scanner\outputs\yt_annotated_20260918_133547.png
 ```
 
 An annotated copy of the input image — with green boxes around detected QR
@@ -135,7 +134,7 @@ results:
 - Avoid extreme blur or very low resolution.
 - A small amount of quiet/white space around the code helps decoding.
 
-The sample files in `sample_images/` (`yt.jpg`, `ean13.png`,) are provided                                           as ready-to-use test fixtures — no extra setup or
+The sample files in `sample_images/` (`yt.jpg`, `ean13.png`,) are provided                                                                                                  as ready-to-use test fixtures — no extra setup or
 generation step is needed to use them.
 
 ---

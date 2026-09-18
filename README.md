@@ -146,10 +146,10 @@ generation step is needed to use them.
    decodes every QR code in the frame in one pass, with a single-code
    fallback (`detectAndDecode`) for edge cases.
 3. **Barcode branch:**
-   - *Localization (illustrative):* a Scharr-gradient-difference +
+   - Localization: a Scharr-gradient-difference +
      morphological-closing pipeline highlights regions with the strong,
      closely spaced vertical edges characteristic of 1D barcodes.
-   - *Decoding:* `cv2.barcode.BarcodeDetector().detectAndDecodeWithType()`
+   - Decoding: `cv2.barcode.BarcodeDetector().detectAndDecodeWithType()`
      locates and decodes the symbol, reporting both the payload and the
      symbology (EAN-13, EAN-8, UPC-A, UPC-E, CODE-128, ...). A very light
      Gaussian blur is applied before detection (with a raw-image fallback)

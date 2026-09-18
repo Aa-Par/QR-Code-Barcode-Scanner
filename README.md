@@ -26,8 +26,8 @@ qr-barcode-scanner/
 ├── scanner.py                 
 ├── requirements.txt          
 ├── sample_images/             
-│   ├── sample_qr.png
-│   └── sample_ean13.png
+│   ├── yt.jpg
+│   └── ean13.png
 ├── outputs/                   
 └── README.md
 ```
@@ -55,7 +55,7 @@ venv\Scripts\Activate.ps1
 
 ### Step 2.4 — Install dependencies
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 This installs:
